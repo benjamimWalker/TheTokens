@@ -6,11 +6,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     let email = document.getElementById('email')
     let key = document.getElementById('key')
 
-    let storageEmail = (await browserApi.storage.local.get('email')).email
     let storageKey = (await browserApi.storage.local.get('key')).key
-    if (storageEmail) {
-        email.value = storageEmail
-    }
+
     if (storageKey) {
         key.value = storageKey
     }
@@ -24,7 +21,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             let apiUrl = config.apiUrl + '?email=' + email.value
             await browserApi.tabs.query({active: true, currentWindow: true}, async function (tabs) {
 
-                await browserApi.storage.local.set({'email': email.value})
                 await browserApi.storage.local.set({'key': key.value})
 
                 let currentTab = tabs[0];
@@ -52,10 +48,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             key = document.getElementById('key')
         }
         if (key.value.trim() !== '' && email.value.trim() !== '') {
-            let apiUrl = 'https://api.themembers.dev.br/api/get-user-token' + '?email=' + email.value
+            let apiUrl = config.apiUrl + '?email=' + email.value
             await browserApi.tabs.query({active: true, currentWindow: true}, async function (tabs) {
 
-                await browserApi.storage.local.set({'email': email.value})
                 await browserApi.storage.local.set({'key': key.value})
 
                 let currentTab = tabs[0];

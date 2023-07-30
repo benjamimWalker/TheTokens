@@ -4,24 +4,54 @@
     <meta charset="UTF-8">
     <script src="app.js" type="module"></script>
 </head>
-<body>
-    <main>
-        <input type="email" id="email" placeholder="email" value="" list="emails">
-        <datalist id="emails">
-            <option>kratos@bomdeguerra.com</option>
-            <option>amanda@gmail.com</option>
-            <option>bhaskdelta2@gmail.com</option>
-        </datalist>
-        <input type="password" id="key" placeholder="internalKey" value="">
-        <button id="login">Logar</button>
-        <button id="loginandcopy">Logar e copiar token</button>
-    </main>
+<body class="bg-body">
+<main>
+    <input class="form" type="email" id="email" placeholder="email" value="" list="emails">
+    <datalist id="emails">
+        <option>kratos@bomdeguerra.com</option>
+        <option>amanda@gmail.com</option>
+        <option>bonequinha1@boneca.com.br</option>
+        <option>demo@themembers.com.br</option>
+        <option>daniellasantosexpert@gmail.com</option>
+        <option>bhaskdedelta2@gmail.com</option>
+    </datalist>
+    <input class="form" type="password" id="key" placeholder="internalKey" value="">
+    <button class="btn" id="login">Logar</button>
+    <button class="btn" id="loginandcopy">Logar e copiar token</button>
+</main>
 </body>
 <style>
+    .bg-body{
+        border-radius: 5px;
+    }
+
     main {
         display: flex;
         flex-direction: column;
         margin: 40px 10px 100px 10px;
+    }
+
+    .form {
+        border-radius: 5px;
+        border: solid gray 1px;
+        height: 20px;
+        background-color: #FFFFFA;
+        color: #808070;
+    }
+
+    .btn {
+        border-radius: 5px;
+        border: solid gray 1px;
+        height: 30px;
+        background-color: lightyellow;
+        color: #808070;
+    }
+
+    .btn:hover {
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.5s;
+        background-color: rgb(168, 233, 168);
+        color: #368036;
     }
 
     #email {
